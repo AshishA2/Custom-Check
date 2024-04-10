@@ -1,0 +1,28 @@
+/* (A) HIDE ORIGINAL CHECKBOX/RADIO */
+.cbox input { display: none; }
+
+/* (B) ICON TO SHOW WHEN CHECKED */
+.cbox input:checked ~ label::before { content: "\2605"; }
+
+/* (C) CUSTOM CHECKBOX SQUARE */
+.cbox label::before {
+  display: inline-block;
+  content: "\00a0"; /* Blank space */
+  width: 25px;
+  margin-right: 5px;
+  text-align: center;
+  background: #f2f2f2;
+}
+
+/* (D) MORE COSMETICS */
+.cbox {
+  font-size: 18px;
+  line-height: 20px;
+  margin: 10px;
+}
+.cbox label { cursor: pointer; }
+.cbox label:hover::before { background: #ddd; }
+
+/* (E) DISABLED CHECKBOXS & RADIO BUTTONS */
+.cbox input:disabled ~ label { color: #aaa; }
+.cbox input:disabled ~ label::before { background: #ccc; }
